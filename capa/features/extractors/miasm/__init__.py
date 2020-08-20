@@ -45,8 +45,9 @@ class MiasmFeatureExtractor(FeatureExtractor):
                         functions.add(loc_key)
                         yield loc_key
 
-    def extract_function_features(self, f):
-        raise NotImplementedError()
+    def extract_function_features(self, loc_key):
+        for feature, va in capa.features.extractors.miasm.function.extract_features(self, loc_key):
+            yield feature, va
 
     def block_offset(self, bb):
         return bb.lines[0].offset
