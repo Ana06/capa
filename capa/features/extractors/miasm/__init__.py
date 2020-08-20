@@ -65,11 +65,12 @@ class MiasmFeatureExtractor(FeatureExtractor):
         for feature, va in capa.features.extractors.miasm.basicblock.extract_features(bb):
             yield feature, va
 
-    def get_instructions(self, f, bb):
-        raise NotImplementedError()
+    def get_instructions(self, _, bb):
+        return bb.lines
 
     def extract_insn_features(self, f, bb, insn):
-        raise NotImplementedError()
+        for feature, va in capa.features.extractors.miasm.insn.extract_features(self, f, bb, insn):
+            yield feature, va
 
     def _get_entry_points(self):
         entry_points = {self.get_base_address()}
