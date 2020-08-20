@@ -9,6 +9,7 @@
 import miasm.expression.expression
 
 import capa.features.extractors.helpers
+from capa.features.insn import Mnemonic
 
 
 def get_imports(pe):
@@ -59,7 +60,7 @@ def extract_insn_nzxor_characteristic_features(extractor, f, bb, insn):
 
 def extract_insn_mnemonic_features(extractor, f, bb, insn):
     """parse mnemonic features from the given instruction."""
-    raise NotImplementedError()
+    yield Mnemonic(insn.name), insn.offset
 
 
 def extract_insn_peb_access_characteristic_features(extractor, f, bb, insn):
@@ -110,7 +111,7 @@ INSTRUCTION_HANDLERS = (
     # extract_insn_bytes_features,
     # extract_insn_offset_features,
     # extract_insn_nzxor_characteristic_features,
-    # extract_insn_mnemonic_features,
+    extract_insn_mnemonic_features,
     # extract_insn_peb_access_characteristic_features,
     # extract_insn_cross_section_cflow,
     # extract_insn_segment_access_features,
