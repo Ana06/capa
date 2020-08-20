@@ -6,10 +6,30 @@
 #  is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and limitations under the License.
 
+import capa.features.extractors.helpers
+
+
+def get_imports(pe):
+    imports = {}
+    for ((dll, symbol), va_set) in miasm.jitter.loader.pe.get_import_address_pe(pe).items():
+        for va in va_set:
+            if isinstance(symbol, int):
+                imports[va] = "%s.#%s" % (dll, symbol)
+            else:
+                imports[va] = "%s.%s"
+    return imports
+
 
 def extract_insn_api_features(extractor, _, _, insn):
     """parse API features from the given instruction."""
-    raise NotImplementedError()
+    if insn.is_subcall():
+        arg = insn.args[0]
+        if isinstance(arg, miasm.expression.expression.ExprMem):
+            target = arg.ptr
+            imports = get_imports(extractor.pe)
+            if target in imports:
+                for feature, va in capa.features.extractors.helpers.generate_api_features(imports[target], insn.offset):
+                    yield feature, va
 
 
 def extract_insn_number_features(extractor, f, bb, insn):
@@ -82,7 +102,7 @@ def extract_features(extractor, f, bb, insn):
 
 
 INSTRUCTION_HANDLERS = (
-    # extract_insn_api_features,
+    extract_insn_api_features,
     # extract_insn_number_features,
     # extract_insn_string_features,
     # extract_insn_bytes_features,
