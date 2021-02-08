@@ -27,6 +27,9 @@ if sys.version_info >= (3, 0):
     # py3
     requirements.append("halo")
     requirements.append("networkx")
+    # TODO: Only one backend should be required
+    requirements.append("vivisect")
+    requirements.append("viv-utils")
     requirements.append("smda==1.5.13")
 else:
     # py2
