@@ -22,21 +22,12 @@ requirements = [
     "wcwidth",
     "ida-settings==2.1.0",
     "viv-utils==0.5.0",
+    "halo",
+    "networkx",
+    "vivisect==1.0.0",
+    "viv-utils==0.5.0",
+    "smda==1.5.13",
 ]
-
-if sys.version_info >= (3, 0):
-    # py3
-    requirements.append("halo")
-    requirements.append("networkx")
-    requirements.append("vivisect==1.0.0")
-    requirements.append("smda==1.5.13")
-else:
-    # py2
-    requirements.append("enum34==1.1.6")  # v1.1.6 is needed by halo 0.0.30 / spinners 0.0.24
-    requirements.append("halo==0.0.30")  # halo==0.0.30 is the last version to support py2.7
-    requirements.append("vivisect==0.2.1")
-    requirements.append("networkx==2.2")  # v2.2 is last version supported by Python 2.7
-    requirements.append("backports.functools-lru-cache")
 
 # this sets __version__
 # via: http://stackoverflow.com/a/7071358/87207
@@ -81,7 +72,7 @@ setuptools.setup(
             "pytest-instafail",
             "pytest-cov",
             "pycodestyle",
-            "black ; python_version>'3.0'",
+            "black",
             "isort",
         ]
     },
@@ -93,8 +84,8 @@ setuptools.setup(
         "Intended Audience :: Information Technology",
         "License :: OSI Approved :: Apache Software License",
         "Natural Language :: English",
-        "Programming Language :: Python :: 2.7",
         "Programming Language :: Python :: 3",
         "Topic :: Security",
     ],
+    python_requires=">=3.6",
 )
