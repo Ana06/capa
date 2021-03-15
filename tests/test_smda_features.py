@@ -5,8 +5,6 @@
 # Unless required by applicable law or agreed to in writing, software distributed under the License
 #  is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and limitations under the License.
-import sys
-
 from fixtures import *
 
 
@@ -16,8 +14,7 @@ from fixtures import *
     indirect=["sample", "scope"],
 )
 def test_smda_features(sample, scope, feature, expected):
-    with xfail(sys.version_info < (3, 0), reason="SMDA only works on py3"):
-        do_test_feature_presence(get_smda_extractor, sample, scope, feature, expected)
+    do_test_feature_presence(get_smda_extractor, sample, scope, feature, expected)
 
 
 @parametrize(
@@ -26,5 +23,4 @@ def test_smda_features(sample, scope, feature, expected):
     indirect=["sample", "scope"],
 )
 def test_smda_feature_counts(sample, scope, feature, expected):
-    with xfail(sys.version_info < (3, 0), reason="SMDA only works on py3"):
-        do_test_feature_count(get_smda_extractor, sample, scope, feature, expected)
+    do_test_feature_count(get_smda_extractor, sample, scope, feature, expected)
