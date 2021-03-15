@@ -566,6 +566,9 @@ def handle_common_args(args):
 
 
 def main(argv=None):
+    if sys.version_info < (3, 6):
+        raise UnsupportedRuntimeError("capa should only be used with Python 3.6+")
+
     if argv is None:
         argv = sys.argv[1:]
 
