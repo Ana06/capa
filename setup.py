@@ -12,7 +12,6 @@ import sys
 import setuptools
 
 requirements = [
-    "six",
     "tqdm",
     "pyyaml",
     "tabulate",
