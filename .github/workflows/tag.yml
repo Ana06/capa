@@ -12,8 +12,8 @@ jobs:
     - name: Checkout capa-rules
       uses: actions/checkout@v2
       with:
-        repository: fireeye/capa-rules
-        token: ${{ secrets.CAPA_TOKEN }}
+        repository: Ana06/capa-rules
+        token: ${{ secrets.CAPA_RULES_TOKEN }}
     - name: Tag capa-rules
       run: |
         # user information is needed to create annotated tags (with a message)
@@ -24,6 +24,6 @@ jobs:
     - name: Push tag to capa-rules
       uses: ad-m/github-push-action@master
       with:
-        repository: fireeye/capa-rules
-        github_token: ${{ secrets.CAPA_TOKEN }}
+        repository: Ana06/capa-rules
+        github_token: ${{ secrets.CAPA_RULES_TOKEN }}
         tags: true
