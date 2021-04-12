@@ -29,7 +29,7 @@ if sys.version_info >= (3, 0):
     requirements.append("networkx==2.5.1")
     requirements.append("ruamel.yaml==0.17.0")
     requirements.append("vivisect==1.0.1")
-    requirements.append("smda==1.5.13")
+    requirements.append("smda==1.5.14")
 else:
     # py2
     requirements.append("enum34==1.1.6")  # v1.1.6 is needed by halo 0.0.30 / spinners 0.0.24
