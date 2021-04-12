@@ -77,7 +77,7 @@ setuptools.setup(
     install_requires=requirements,
     extras_require={
         "dev": [
-            "pytest==4.6.11",  # TODO: Change to 6.2.3 when removing py2
+            "pytest==6.2.3",  # TODO: Change to 6.2.3 when removing py2
             "pytest-sugar==0.9.4",
             "pytest-instafail==0.4.2",
             "pytest-cov==2.11.1",
