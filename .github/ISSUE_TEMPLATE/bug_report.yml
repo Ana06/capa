@@ -1,0 +1,60 @@
+name: Bug report
+about: Create a report to help us improve
+labels: [bug]
+
+body:
+- type: markdown
+  attributes:
+    value: |
+      "Thanks for taking the time to fill out this bug report! ♥️
+
+      # Is your bug report related to capa rules (for example a false positive)?
+      We use submodules to separate code, rules and test data. If your issue is related to capa rules, please report it at https://github.com/fireeye/capa-rules/issues.
+
+      # Have you checked that your issue isn't already filed?
+      Please search if there is a similar issue at https://github.com/fireeye/capa/issues. If there is already a similar issue, please add more details there instead of opening a new one.
+
+      # Have you read capa's CONTRIBUTING guide?
+      It contains helpful information about how to contribute to capa. Check https://github.com/fireeye/capa/blob/master/.github/CONTRIBUTING.md#reporting-bugs
+
+      # Have you read capa's Code of Conduct?
+      By filing an Issue, you are expected to comply with it, including treating everyone with respect: https://github.com/fireeye/capa/blob/master/.github/CODE_OF_CONDUCT.md"
+
+- type: textarea
+  id: description
+  attributes:
+    label: Description
+    description: Description of the bug. Please include the expected and actual behaviour.
+    placeholder: Tell us what you see!
+  validations:
+    required: true
+
+- type: textarea
+  id: steps
+  attributes:
+    label: Steps to reproduce
+    description: How do you trigger this bug? Please walk us through it step by step.
+    placeholder: |
+      1. First step
+      2. Second step
+      3. And so on
+
+- type: textarea
+  id: version
+  attributes:
+    label: Version
+    description: |
+      In which versions does the bug happen?
+      You can get this information from copy and pasting the output of `capa --version` from the command line.
+      Please specify the component you're using (e.g. standalone tool or IDA Pro integration) and your Python version.
+      Also, please include the OS and what version of the OS you're running.
+    placeholder: v1.6.2
+  validations:
+    required: true
+
+- type: textarea
+  id: additional
+  attributes:
+    label: Additional Information
+    description: Any additional information, configuration or data that might be necessary to reproduce the issue.
+
