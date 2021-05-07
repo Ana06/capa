@@ -76,6 +76,7 @@ It includes many new rules, including some for ATT&CK v9.
 - nursery/list-containers https://github.com/fireeye/capa-rules/pull/365 @williballenthin
 - nursery/run-in-container https://github.com/fireeye/capa-rules/pull/365 @williballenthin
 - persistence/registry/appinitdlls/disable-appinit_dlls-code-signature-enforcement https://github.com/fireeye/capa-rules/pull/367 @williballenthin
+-
 
 ### Bug Fixes
 
