@@ -3,13 +3,79 @@
 ## master (unreleased)
 
 The first Python 3 ONLY capa version.
+It includes many new rules, including some for ATT&CK v9.
 
 ### New Features
 
 - main: auto detect shellcode based on file extension #516 @mr-tz
 - main: use FLIRT signatures to identify and ignore library code #446 @williballenthin
+- explorer: IDA 7.6 support #497 @williballenthin
 
-### New Rules
+### New Rules (63)
+
+- anti-analysis/packer/amber/packed-with-amber https://github.com/fireeye/capa-rules/pull/333 @gormaniac
+- collection/file-managers/gather-3d-ftp-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- collection/file-managers/gather-alftp-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- collection/file-managers/gather-bitkinex-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- collection/file-managers/gather-blazeftp-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- collection/file-managers/gather-bulletproof-ftp-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- collection/file-managers/gather-classicftp-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- collection/file-managers/gather-coreftp-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- collection/file-managers/gather-cuteftp-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- collection/file-managers/gather-cyberduck-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- collection/file-managers/gather-direct-ftp-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- collection/file-managers/gather-directory-opus-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- collection/file-managers/gather-expandrive-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- collection/file-managers/gather-faststone-browser-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- collection/file-managers/gather-fasttrack-ftp-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- collection/file-managers/gather-ffftp-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- collection/file-managers/gather-filezilla-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- collection/file-managers/gather-flashfxp-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- collection/file-managers/gather-fling-ftp-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- collection/file-managers/gather-freshftp-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- collection/file-managers/gather-frigate3-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- collection/file-managers/gather-ftp-commander-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- collection/file-managers/gather-ftp-explorer-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- collection/file-managers/gather-ftp-voyager-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- collection/file-managers/gather-ftpgetter-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- collection/file-managers/gather-ftpinfo-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- collection/file-managers/gather-ftpnow-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- collection/file-managers/gather-ftprush-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- collection/file-managers/gather-ftpshell-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- collection/file-managers/gather-global-downloader-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- collection/file-managers/gather-goftp-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- collection/file-managers/gather-leapftp-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- collection/file-managers/gather-netdrive-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- collection/file-managers/gather-nexusfile-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- collection/file-managers/gather-nova-ftp-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- collection/file-managers/gather-robo-ftp-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- collection/file-managers/gather-securefx-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- collection/file-managers/gather-smart-ftp-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- collection/file-managers/gather-softx-ftp-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- collection/file-managers/gather-southriver-webdrive-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- collection/file-managers/gather-staff-ftp-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- collection/file-managers/gather-total-commander-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- collection/file-managers/gather-turbo-ftp-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- collection/file-managers/gather-ultrafxp-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- collection/file-managers/gather-winscp-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- collection/file-managers/gather-winzip-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- collection/file-managers/gather-wise-ftp-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- collection/file-managers/gather-ws-ftp-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- collection/file-managers/gather-xftp-information https://github.com/fireeye/capa-rules/pull/337 @re-fox
+- data-manipulation/compression/decompress-data-using-aplib https://github.com/fireeye/capa-rules/pull/313 @r3c0nst @mr-tz
+- host-interaction/bootloader/disable-code-signing https://github.com/fireeye/capa-rules/pull/367 @williballenthin
+- host-interaction/bootloader/manipulate-boot-configuration https://github.com/fireeye/capa-rules/pull/367 @williballenthin
+- host-interaction/driver/disable-driver-code-integrity https://github.com/fireeye/capa-rules/pull/367 @williballenthin
+- host-interaction/file-system/bypass-mark-of-the-web https://github.com/fireeye/capa-rules/pull/366 @williballenthin
+- host-interaction/network/domain/get-domain-information https://github.com/fireeye/capa-rules/pull/338 @recvfrom
+- host-interaction/session/get-logon-sessions https://github.com/fireeye/capa-rules/pull/338 @recvfrom
+- linking/runtime-linking/resolve-function-by-fin8-fasthash https://github.com/fireeye/capa-rules/pull/313 @r3c0nst @mr-tz
+- nursery/build-docker-image https://github.com/fireeye/capa-rules/pull/365 @williballenthin
+- nursery/create-container https://github.com/fireeye/capa-rules/pull/365 @williballenthin
+- nursery/encrypt-data-using-fakem-cipher https://github.com/fireeye/capa-rules/pull/314 @mike-hunhoff
+- nursery/list-containers https://github.com/fireeye/capa-rules/pull/365 @williballenthin
+- nursery/run-in-container https://github.com/fireeye/capa-rules/pull/365 @williballenthin
+- persistence/registry/appinitdlls/disable-appinit_dlls-code-signature-enforcement https://github.com/fireeye/capa-rules/pull/367 @williballenthin
 
 ### Bug Fixes
 
@@ -20,6 +86,8 @@ The first Python 3 ONLY capa version.
 - py3: drop Python 2 support #480 @Ana06
 - deps: bump ruamel yaml parser to 0.17.4 #519 @williballenthin
 - explorer: explain how to install IDA 7.6 patch to enable the plugin #528 @williballenthin
+- explorer: document IDA 7.6sp1 as alternative to the patch #536 @Ana06
+- rules: update ATT&CK and MBC mappings https://github.com/fireeye/capa-rules/pull/317 @williballenthin
 
 ### Development
 
