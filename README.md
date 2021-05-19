@@ -61,6 +61,8 @@ $ capa.exe suspicious.exe
 +-------------------------------------------------------+-------------------------------------------------+
 ```
 
+I am adding some important information.
+
 # download and usage
 
 Download stable releases of the standalone capa binaries [here](https://github.com/fireeye/capa/releases). You can run the standalone binaries without installation. capa is a command line tool that should be run from the terminal.
