@@ -11,7 +11,7 @@ jobs:
   check_changelog:
     runs-on: ubuntu-20.04
     env:
-      NO_CHANGELOG: '[X] No CHANGELOG update needed'
+      NO_CHANGELOG: '[x] No CHANGELOG update needed'
     steps:
     - name: Get changed files
       id: files
@@ -22,7 +22,7 @@ jobs:
         PR_BODY: ${{ github.event.pull_request.body }}
         FILES: ${{ steps.files.outputs.modified }}
       run: |
-        echo $FILES | grep -qF 'CHANGELOG.md' || echo $PR_BODY | grep -qF "$NO_CHANGELOG"
+        echo $FILES | grep -qF 'CHANGELOG.md' || echo $PR_BODY | grep -qiF "$NO_CHANGELOG"
     - name: Reject pull request if no CHANGELOG update
       if: ${{ always() && steps.changelog_updated.outcome == 'failure' }}
       uses: Ana06/automatic-pull-request-review@master
