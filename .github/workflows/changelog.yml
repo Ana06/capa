@@ -17,7 +17,10 @@ jobs:
     steps:
     - name: Get changed files
       id: files
-      uses: Ana06/get-changed-files@v1.2
+      uses: Ana06/get-changed-files@v2.0.0
+      with:
+        filter: |
+          *.md
     - name: check changelog updated
       id: changelog_updated
       env:
