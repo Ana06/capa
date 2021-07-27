@@ -19,5 +19,5 @@ def get_file_taste(sample_path: str) -> bytes:
     if not os.path.exists(sample_path):
         raise IOError("sample path %s does not exist or cannot be accessed" % sample_path)
     with open(sample_path, "rb") as f:
-        taste = f.read(8)
+        taste = f.read(7)
     return taste
