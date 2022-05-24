@@ -81,7 +81,7 @@ setuptools.setup(
             "types-colorama==0.4.4",
             "types-PyYAML==6.0.0",
             "types-tabulate==0.8.3",
-            "types-termcolor==1.1.2",
+            "types-termcolor==1.1.4",
             "types-psutil==5.8.14",
         ],
     },
