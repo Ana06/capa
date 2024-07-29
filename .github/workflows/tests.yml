@@ -36,7 +36,6 @@ jobs:
         python-version: "3.11"
     - name: Install dependencies
       run: |
-        pip install -r requirements.txt
         pip install -e .[dev,scripts]
     - name: Lint with ruff
       run: pre-commit run ruff
@@ -64,7 +63,6 @@ jobs:
         python-version: "3.11"
     - name: Install capa
       run: |
-        pip install -r requirements.txt
         pip install -e .[dev,scripts]
     - name: Run rule linter
       run: python scripts/lint.py rules/
